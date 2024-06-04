@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="DICOMViewApp.UcTagView">
+	<UserControl.Styles>
+		<Style Selector="TextBlock">
+			<Setter Property="Foreground" Value="White"></Setter>
+		</Style>
+	</UserControl.Styles>
+	<DockPanel LastChildFill="True" Margin="10">
+		<DockPanel DockPanel.Dock="Right" LastChildFill="True">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+				</Grid.RowDefinitions>
+				<StackPanel Grid.Row="0" HorizontalAlignment="Right">
+					<TextBlock FontWeight="Bold">CT</TextBlock>
+				</StackPanel>
+				<StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+					<TextBlock>Zoom:1.00</TextBlock>
+					<TextBlock>512*512</TextBlock>
+					<TextBlock>WW:350/WL:50</TextBlock>
+				</StackPanel>
+			</Grid>
+		</DockPanel>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+			</Grid.RowDefinitions>
+			<StackPanel Grid.Row="0" >
+				<TextBlock FontWeight="Bold">Anonymized</TextBlock>
+				<TextBlock FontWeight="Bold">0</TextBlock>
+				<TextBlock>0Y</TextBlock>
+				<TextBlock>2006/10/12 08:52:29</TextBlock>
+				<TextBlock>S:6168 I:46</TextBlock>
+				<TextBlock>ORIGINAL\PRIMARWAXIAL\HELIX</TextBlock>
+				<TextBlock>SL:-302.5mm</TextBlock>
+				<TextBlock>FFS</TextBlock>
+				<TextBlock>ART.RENALES 12/Abdomen/Hx</TextBlock>
+			</StackPanel>
+			<StackPanel Grid.Row="1" VerticalAlignment="Center">
+				<TextBlock>R</TextBlock>
+			</StackPanel>
+			<StackPanel Grid.Row="2" VerticalAlignment="Bottom">
+				<TextBlock FontWeight="Bold">CONTRAST</TextBlock>
+				<TextBlock >120kV/300mAs</TextBlock>
+				<TextBlock>1.0mm</TextBlock>
+				<TextBlock>Tilt: 0.0</TextBlock>
+				<TextBlock>FOV: 302mm</TextBlock>
+			</StackPanel>
+		</Grid>
+	</DockPanel>
+</UserControl>

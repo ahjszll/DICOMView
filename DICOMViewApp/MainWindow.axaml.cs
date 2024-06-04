@@ -22,9 +22,9 @@ namespace DICOMViewApp
   .SkipValidation()
   .Build();
             InitializeComponent();
-            LoadDCM();
-            iimg.PointerWheelChanged += Iimg_PointerWheelChanged;
-            this.PointerWheelChanged += MainWindow_PointerWheelChanged;
+            //LoadDCM();
+            //iimg.PointerWheelChanged += Iimg_PointerWheelChanged;
+            //this.PointerWheelChanged += MainWindow_PointerWheelChanged;
         }
 
         private int pos = 0;
