@@ -1,9 +1,7 @@
 using Avalonia.Controls;
-using Avalonia.Media;
 using Avalonia.Media.Imaging;
-using Avalonia.Threading;
 using FellowOakDicom;
-using FellowOakDicom.Imaging;
+using FellowOakDicom.Imaging.Reconstruction;
 using FellowOakDicom.Media;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,6 +12,8 @@ namespace DICOMViewApp
     {
         private List<DicomFile> _files = new List<DicomFile>();
         private List<Bitmap> _images = new List<Bitmap>();
+        private List<ImageData> _imageDatas = new List<ImageData>();
+        private VolumeData? _volumeData = null;
 
         public MainWindow()
         {
@@ -22,7 +22,7 @@ namespace DICOMViewApp
   .SkipValidation()
   .Build();
             InitializeComponent();
-            //LoadDCM();
+            LoadDCM();
             //iimg.PointerWheelChanged += Iimg_PointerWheelChanged;
             //this.PointerWheelChanged += MainWindow_PointerWheelChanged;
         }
@@ -36,7 +36,6 @@ namespace DICOMViewApp
                 pos = 0;
             if (pos >= _images.Count)
                 pos = _images.Count - 1;
-            iimg.Source = _images[pos];
             Debug.WriteLine(pos);
         }
 
@@ -47,7 +46,6 @@ namespace DICOMViewApp
                 pos = 0;
             if (pos >= _images.Count)
                 pos = _images.Count - 1;
-            iimg.Source = _images[pos];
             Debug.WriteLine(pos);
         }
 
@@ -55,22 +53,22 @@ namespace DICOMViewApp
         {
             var scan = new DicomFileScanner();
             scan.FileFound += Scan_FileFound;
+            scan.Complete += Scan_Complete;
             scan.Start(@"H:\DICOM\series-000001");
+        }
 
+        private void Scan_Complete(DicomFileScanner scanner)
+        {
+            _volumeData = new VolumeData(_imageDatas);
+            var stack = new Stack(_volumeData, StackType.Axial, 2, 2);
+            foreach (var item in stack.Slices)
+            {
+            }
         }
 
         private void Scan_FileFound(DicomFileScanner scanner, DicomFile file, string fileName)
         {
-            _files.Add(file);
-            var img = new DicomImage(file.Dataset).RenderImage();
-
-            Bitmap img2 = new Bitmap(Avalonia.Platform.PixelFormat.Bgra8888,
-                Avalonia.Platform.AlphaFormat.Opaque,
-                img.Pixels.Pointer,
-                new Avalonia.PixelSize(img.Width, img.Height),
-                new Avalonia.Vector(96, 96), img.Pixels.ByteSize / img.Pixels.Count * img.Width);
-            _images.Add(img2);
-
+            _imageDatas.Add(new ImageData(fileName));
         }
     }
 }

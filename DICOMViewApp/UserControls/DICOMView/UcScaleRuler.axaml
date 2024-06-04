@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="DICOMViewApp.UcScaleRuler">
+             x:Class="DICOMViewApp.UserControls.DICOMView.UcScaleRuler">
 	<UserControl.Styles>
 		<Style Selector="TextBlock">
 			<Setter Property="Foreground" Value="White"></Setter>
@@ -11,6 +11,5 @@
 	</UserControl.Styles>
 	<Grid Background="Black">
 		<DockPanel></DockPanel>
-		
 	</Grid>
 </UserControl>
