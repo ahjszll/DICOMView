@@ -20,5 +20,29 @@
 			</Image>
 		</ContentControl>
 		<uc:UcTagView></uc:UcTagView>
+		<Grid.ContextMenu>
+			<ContextMenu>
+				<MenuItem Header="默认" Command="{Binding ChangeMode}">
+					<MenuItem.CommandParameter>
+						<ucModel:EnumOperationMode>None</ucModel:EnumOperationMode>
+					</MenuItem.CommandParameter>
+				</MenuItem>
+				<MenuItem Header="移动" Command="{Binding ChangeMode}">
+					<MenuItem.CommandParameter>
+						<ucModel:EnumOperationMode>Move</ucModel:EnumOperationMode>
+					</MenuItem.CommandParameter>
+				</MenuItem>
+				<MenuItem Header="缩放" Command="{Binding ChangeMode}">
+					<MenuItem.CommandParameter>
+						<ucModel:EnumOperationMode>Scale</ucModel:EnumOperationMode>
+					</MenuItem.CommandParameter>
+				</MenuItem>
+				<MenuItem Header="旋转" Command="{Binding ChangeMode}">
+					<MenuItem.CommandParameter>
+						<ucModel:EnumOperationMode>Rotate</ucModel:EnumOperationMode>
+					</MenuItem.CommandParameter>
+				</MenuItem>
+			</ContextMenu>
+		</Grid.ContextMenu>
 	</Grid>
 </UserControl>
