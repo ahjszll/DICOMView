@@ -5,6 +5,7 @@
         xmlns:vm="using:ControlPanel.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="using:ControlPanel.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ControlPanel.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -17,6 +18,9 @@
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
 	<DockPanel>
+		<StackPanel DockPanel.Dock="Bottom" Margin="10">
+			<TextBlock>asdf</TextBlock>
+		</StackPanel>
 		<ui:NavigationView  Name="NavView" IsSettingsVisible="False" PaneDisplayMode="Top">
 			<ui:NavigationView.MenuItems>
 				<ui:NavigationViewItem  x:Name="navHome" Width="130" Classes="SampleAppNav" Content="快捷操作" IconSource="HomeFilled" />
@@ -28,6 +32,7 @@
 			<TabControl x:Name="tabControl">
 				<TabControl.Items>
 					<TabItem Width="0">
+						<local:UserManager Margin="0,-40,0,0"></local:UserManager>
 					</TabItem>
 					<TabItem Width="0">
 					</TabItem>
@@ -38,6 +43,5 @@
 				</TabControl.Items>
 			</TabControl>
 		</ui:NavigationView>
-
 	</DockPanel>
 </Window>

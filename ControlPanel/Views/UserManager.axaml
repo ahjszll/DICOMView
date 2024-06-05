@@ -5,6 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="ControlPanel.UserManager">
-  Welcome to Avalonia!
+             x:Class="ControlPanel.Views.UserManager">
+	<DockPanel>
+		<Border DockPanel.Dock="Top" Classes="Card">
+			<StackPanel Orientation="Horizontal">
+				<Button Margin="10">新增</Button>
+				<Button Margin="10">删除</Button>
+				<Button Margin="10">修改</Button>
+			</StackPanel>
+		</Border>
+		<DataGrid DataContext="Users"></DataGrid>
+	</DockPanel>
 </UserControl>

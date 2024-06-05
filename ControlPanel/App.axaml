@@ -8,6 +8,20 @@
     <Application.Styles>
 		<sty:FluentAvaloniaTheme />
 		<StyleInclude Source="avares://ControlPanel/Styling/ControlsGalleryStyles.axaml" />
+		<Style Selector="Border.Card">
+			<Setter Property="Margin" Value="10"></Setter>
+			<Setter Property="CornerRadius" Value="5"></Setter>
+			<Setter Property="Background" Value="{DynamicResource DividerStrokeColorDefaultBrush}"></Setter>
+		</Style>
+		<Style Selector="Button">
+			<Setter Property="FontFamily" Value="微软雅黑"></Setter>
+		</Style>
+		<Style Selector="TextBlock">
+			<Setter Property="FontFamily" Value="微软雅黑"></Setter>
+		</Style>
+		<Style Selector="TextBox">
+			<Setter Property="FontFamily" Value="微软雅黑"></Setter>
+		</Style>
         <!--<FluentTheme  />-->
     </Application.Styles>
 </Application>

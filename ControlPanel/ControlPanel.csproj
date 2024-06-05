@@ -32,4 +32,19 @@
     <ProjectReference Include="..\Model\Models.csproj" />
     <ProjectReference Include="..\UIComponet\UIComponet.csproj" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <AvaloniaXaml Update="Views\Login.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaXaml>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Views\Login.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Login.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
