@@ -1,4 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
+		xmlns:ui="using:FluentAvalonia.UI.Controls"
+		xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:ControlPanel.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,12 +11,33 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="ControlPanel">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+	<DockPanel>
+		<ui:NavigationView  Name="NavView" IsSettingsVisible="False" PaneDisplayMode="Top">
+			<ui:NavigationView.MenuItems>
+				<ui:NavigationViewItem  x:Name="navHome" Width="130" Classes="SampleAppNav" Content="快捷操作" IconSource="HomeFilled" />
+				<ui:NavigationViewItem  x:Name="navUser" Width="130" Classes="SampleAppNav" Content="用户管理" IconSource="HomeFilled" />
+				<ui:NavigationViewItem  x:Name="navCR1" Width="130" Classes="SampleAppNav" Content="用户管理" IconSource="Star"   />
+				<ui:NavigationViewItem  x:Name="navCR2" Width="130" Classes="SampleAppNav" Content="数据采集" IconSource="Star" />
+				<ui:NavigationViewItem  x:Name="navCR3" Width="130" Classes="SampleAppNav" Content="设备检测" IconSource="Star" />
+			</ui:NavigationView.MenuItems>
+			<TabControl x:Name="tabControl">
+				<TabControl.Items>
+					<TabItem Width="0">
+					</TabItem>
+					<TabItem Width="0">
+					</TabItem>
+					<TabItem Width="0">
+					</TabItem>
+					<TabItem Width="0">
+					</TabItem>
+				</TabControl.Items>
+			</TabControl>
+		</ui:NavigationView>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+	</DockPanel>
 </Window>
