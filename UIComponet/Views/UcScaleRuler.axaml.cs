@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace DICOMViewApp.UserControls.DICOMView;
+namespace UIComponet.Views;
 
 public partial class UcScaleRuler : UserControl
 {

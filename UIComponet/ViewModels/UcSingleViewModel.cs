@@ -1,6 +1,6 @@
 using ReactiveUI;
 
-namespace DICOMViewApp.UserControls.DICOMView.ViewModels
+namespace UIComponet.ViewModels
 {
     public class UcSingleViewModel : ReactiveObject
     {

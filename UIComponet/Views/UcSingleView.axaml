@@ -3,10 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-			 xmlns:uc="clr-namespace:DICOMViewApp.UserControls.DICOMView"
-			 xmlns:ucModel="clr-namespace:DICOMViewApp.UserControls.DICOMView.ViewModels"
+			 xmlns:uc="clr-namespace:UIComponet.Views"
+			 xmlns:ucModel="clr-namespace:UIComponet.ViewModels"
 			 x:DataType="ucModel:UcSingleViewModel"
-             x:Class="DICOMViewApp.UserControls.DICOMView.UcSingleView">
+             x:Class="UIComponet.Views.UcSingleView">
 	<Grid Background="Black">
 		<ContentControl x:Name="imgParent" Background="Black">
 			<Image x:Name="img" Source="avares://DICOMViewApp/Assets/Images/DICOMTest.jpg" >

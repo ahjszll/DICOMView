@@ -1,11 +1,11 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
-using DICOMViewApp.UserControls.DICOMView.ViewModels;
 using ReactiveUI;
 using System.Diagnostics;
+using UIComponet.ViewModels;
 
-namespace DICOMViewApp.UserControls.DICOMView;
+namespace UIComponet.Views;
 
 public partial class UcSingleView : UserControl
 {
