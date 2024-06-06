@@ -1,19 +1,35 @@
 <UserControl xmlns="https://github.com/avaloniaui"
 			 xmlns:ui="using:FluentAvalonia.UI.Controls"
-		    xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
+		     xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
+			 xmlns:uc="using:ControlPanel.ViewModels"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:DataType="uc:UserManagerViewModel"
              x:Class="ControlPanel.Views.UserManager">
+	<Design.DataContext>
+		<uc:UserManagerViewModel></uc:UserManagerViewModel>
+	</Design.DataContext>
 	<DockPanel>
-		<Border DockPanel.Dock="Top" Classes="Card">
+		<Border DockPanel.Dock="Top" Classes="Card" Margin="0">
+			<TextBlock Text="{Binding Title}"></TextBlock>
+		</Border>
+		<Border DockPanel.Dock="Top" Classes="Card"  Margin="0 10">
 			<StackPanel Orientation="Horizontal">
 				<Button Margin="10">新增</Button>
 				<Button Margin="10">删除</Button>
 				<Button Margin="10">修改</Button>
 			</StackPanel>
 		</Border>
-		<DataGrid DataContext="Users"></DataGrid>
+		<DataGrid ItemsSource="{Binding Users}"  Margin="0 10">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="用户名" Binding="{Binding Name}"> </DataGridTextColumn>
+				<DataGridTextColumn Header="姓名" Binding="{Binding Name}"> </DataGridTextColumn>
+				<DataGridTextColumn Header="类型" Binding="{Binding Name}"> </DataGridTextColumn>
+				<DataGridTextColumn Header="创建时间" Binding="{Binding Name}"> </DataGridTextColumn>
+				<DataGridTextColumn Header="修改时间" Binding="{Binding Name}"> </DataGridTextColumn>
+			</DataGrid.Columns>
+		</DataGrid>
 	</DockPanel>
 </UserControl>

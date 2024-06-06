@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+		     xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
+			 xmlns:uc="using:ControlPanel.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:DataType="uc:MainWindowStatusBarViewModel"
+             x:Class="ControlPanel.Views.MainWindowStatusBar">
+	<Design.DataContext>
+		<uc:MainWindowStatusBarViewModel></uc:MainWindowStatusBarViewModel>
+	</Design.DataContext>
+	<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+		<Border CornerRadius="20" Background="Red" Width="20" Height="20" Margin="20 0 20 0"></Border>
+		<TextBlock >采集设备</TextBlock>
+		<Border CornerRadius="20" Background="Green" Width="20" Height="20" Margin="60 0 20 0"></Border>
+		<TextBlock >通讯服务</TextBlock>
+		<Border CornerRadius="20" Background="Green" Width="20" Height="20" Margin="60 0 20 0"></Border>
+		<TextBlock >重建服务</TextBlock>
+		<Border CornerRadius="20" Background="Green" Width="20" Height="20" Margin="60 0 20 0"></Border>
+		<TextBlock >其他</TextBlock>
+	</StackPanel>
+</UserControl>

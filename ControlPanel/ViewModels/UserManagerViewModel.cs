@@ -4,7 +4,7 @@ namespace ControlPanel.ViewModels
 {
     public class UserManagerViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
+        public string Title => "用户管理";
 
         public List<UserView> Users { get; set; } = new List<UserView>() { new UserView (),new UserView () };
     }

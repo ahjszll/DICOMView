@@ -14,10 +14,10 @@
 	</Design.DataContext>
 	<StackPanel Width="400">
 		<Image Source="avares://ControlPanel/Assets/avalonia-logo.ico" Width="100" Margin="20"></Image>
-		<TextBlock Margin="5" FontSize="18" Foreground="Silver">用户名</TextBlock>
-		<TextBox Margin="5" FontSize="18"  Text="{Binding Name}"></TextBox>
-		<TextBlock Margin="5" FontSize="18" Foreground="Silver">密码</TextBlock>
-		<TextBox Margin="5"  FontSize="18" PasswordChar="*"  Text="{Binding Pwd}"></TextBox>
-		<TextBlock Margin="5" Foreground="Red" Text="{Binding LoginMsg}"></TextBlock>
+		<TextBlock Margin="10 8"  Foreground="Silver">用户名</TextBlock>
+		<TextBox Margin="5 8"   Text="{Binding Name}"></TextBox>
+		<TextBlock Margin="10 8"  Foreground="Silver">密码</TextBlock>
+		<TextBox Margin="5 8"  PasswordChar="*"  Text="{Binding Pwd}"></TextBox>
+		<TextBlock Margin="10 8" HorizontalAlignment="Right" Foreground="Red" Text="{Binding LoginMsg}"></TextBlock>
 	</StackPanel>
 </UserControl>

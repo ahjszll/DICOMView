@@ -24,6 +24,7 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.10" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.10" />
     <PackageReference Include="FluentAvaloniaUI" Version="2.0.5" />
+    <PackageReference Include="FluentIcons.Avalonia.Fluent" Version="1.1.242" />
   </ItemGroup>
 
 
@@ -45,6 +46,9 @@
     <Compile Update="Views\Login.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>Login.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainWindowStatusBar.axaml.cs">
+      <DependentUpon>MainWindowStatusBar.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

@@ -21,7 +21,7 @@ namespace ControlPanel.ViewModels
             set => this.RaiseAndSetIfChanged(ref _name, value);
         }
 
-        private string _pwd = "admi";
+        private string _pwd = "admin";
         public string Pwd
         {
             get => _pwd;
