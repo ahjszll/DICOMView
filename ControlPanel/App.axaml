@@ -1,5 +1,6 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
              x:Class="ControlPanel.App"
 			 xmlns:sty="using:FluentAvalonia.Styling"
              RequestedThemeVariant="Dark">
@@ -24,4 +25,7 @@
 		</Style>
         <!--<FluentTheme  />-->
     </Application.Styles>
+	<Application.Resources>
+		<ui:ImageIconSource x:Key="HeadBackground" Source="avares://ControlPanel/Assets/Images/FAHeaderBackground_Dark.png" />
+	</Application.Resources>
 </Application>

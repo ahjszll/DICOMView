@@ -12,9 +12,6 @@
 		<uc:UserManagerViewModel></uc:UserManagerViewModel>
 	</Design.DataContext>
 	<DockPanel>
-		<Border DockPanel.Dock="Top" Classes="Card" Margin="0">
-			<TextBlock Text="{Binding Title}"></TextBlock>
-		</Border>
 		<Border DockPanel.Dock="Top" Classes="Card"  Margin="0 10">
 			<StackPanel Orientation="Horizontal">
 				<Button Margin="10">新增</Button>

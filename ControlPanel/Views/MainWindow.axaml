@@ -14,42 +14,52 @@
         Title="ControlPanel">
 
 	<Design.DataContext>
-		<!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
 	<DockPanel>
 		<StackPanel DockPanel.Dock="Bottom" Margin="10">
 			<local:MainWindowStatusBar></local:MainWindowStatusBar>
 		</StackPanel>
-		<ui:NavigationView  Name="NavView" IsSettingsVisible="False" PaneDisplayMode="Top" Header="asdf">
+		<ui:NavigationView  Name="NavView" IsSettingsVisible="False" PaneDisplayMode="Top">
 			<ui:NavigationView.MenuItems>
-				<ui:NavigationViewItem Width="130" Classes="SampleAppNav" Content="菜单" IconSource="{ic:SymbolIconSource Symbol= Settings}" SelectsOnInvoked="False" >
+				<ui:NavigationViewItem Classes="SampleAppNav" Content="小李" IconSource="{ic:SymbolIconSource Symbol= Person}" SelectsOnInvoked="False" >
 					<ui:NavigationViewItem.MenuItems>
-						<ui:NavigationViewItem Content="Mail" IconSource="Mail" Tag="SamplePage3" SelectsOnInvoked="False" />
-						<ui:NavigationViewItem Content="Calendar" IconSource="Calendar" Tag="SamplePage4" SelectsOnInvoked="False" />
+						<ui:NavigationViewItem Content="修改密码" IconSource="{ic:SymbolIconSource Symbol= Key}" SelectsOnInvoked="False" />
+						<ui:NavigationViewItem Content="退出" IconSource="{ic:SymbolIconSource Symbol= PresenterOff}"  SelectsOnInvoked="False" />
 					</ui:NavigationViewItem.MenuItems>
 				</ui:NavigationViewItem>
 				<ui:NavigationViewItem  x:Name="navHome" Width="130" Classes="SampleAppNav" Content="快捷操作" IconSource="{ic:SymbolIconSource Symbol= AppFolder}" />
 				<ui:NavigationViewItem  x:Name="navUser" Width="130" Classes="SampleAppNav" Content="用户管理" IconSource="{ic:SymbolIconSource Symbol= People}" IsSelected="True"   />
-				<ui:NavigationViewItem  x:Name="navCR1" Width="130" Classes="SampleAppNav" Content="用户管理"  IconSource="{ic:SymbolIconSource Symbol= Patient}" />
-				<ui:NavigationViewItem  x:Name="navCR2" Width="130" Classes="SampleAppNav" Content="数据采集"  IconSource="{ic:SymbolIconSource Symbol= DocumentCatchUp}" />
-				<ui:NavigationViewItem  x:Name="navCR3" Width="130" Classes="SampleAppNav" Content="数据重建"  IconSource="{ic:SymbolIconSource Symbol= DocumentEdit}" />
-				<ui:NavigationViewItem  x:Name="navCR4" Width="130" Classes="SampleAppNav" Content="设备检测"  IconSource="{ic:SymbolIconSource Symbol= WrenchScrewdriver}" />
+				<ui:NavigationViewItem  x:Name="navPat" Width="130" Classes="SampleAppNav" Content="用户管理"  IconSource="{ic:SymbolIconSource Symbol= Patient}" />
+				<ui:NavigationViewItem  x:Name="navCapture" Width="130" Classes="SampleAppNav" Content="数据采集"  IconSource="{ic:SymbolIconSource Symbol= DocumentCatchUp}" />
+				<ui:NavigationViewItem  x:Name="navReconstruction" Width="130" Classes="SampleAppNav" Content="数据重建"  IconSource="{ic:SymbolIconSource Symbol= DocumentEdit}" />
+				<ui:NavigationViewItem  x:Name="navDeviceCheck" Width="130" Classes="SampleAppNav" Content="设备检测"  IconSource="{ic:SymbolIconSource Symbol= WrenchScrewdriver}" />
+				<ui:NavigationViewItem  x:Name="navSetup" Width="130" Classes="SampleAppNav" Content="系统设置"  IconSource="{ic:SymbolIconSource Symbol= Settings}" />
 			</ui:NavigationView.MenuItems>
-			<TabControl x:Name="tabControl">
-				<TabControl.Items>
-					<TabItem Width="0">
-						<local:UserManager Margin="0,-40,0,0"></local:UserManager>
-					</TabItem>
-					<TabItem Width="0">
-					</TabItem>
-					<TabItem Width="0">
-					</TabItem>
-					<TabItem Width="0">
-					</TabItem>
-				</TabControl.Items>
-			</TabControl>
+			<DockPanel>
+				<Border Classes="Card" DockPanel.Dock="Top" Height="50">
+					<Border.Background>
+						<ImageBrush Source="avares://ControlPanel/Assets/Images/FAHeaderBackground_Dark.png" Stretch="UniformToFill"></ImageBrush>
+					</Border.Background>
+					<Panel VerticalAlignment="Center">
+						<TextBlock HorizontalAlignment="Left" Margin="5" Foreground="Black" FontSize="24" FontWeight="Bold">用户管理</TextBlock>
+						<TextBlock HorizontalAlignment="Right" Margin="10" Text="{Binding DateTimeNow}"></TextBlock>
+					</Panel>
+				</Border>
+				<TabControl x:Name="tabControl">
+					<TabControl.Items>
+						<TabItem Width="0">
+							<local:UserManager Margin="0,-40,0,0"></local:UserManager>
+						</TabItem>
+						<TabItem Width="0">
+						</TabItem>
+						<TabItem Width="0">
+						</TabItem>
+						<TabItem Width="0">
+						</TabItem>
+					</TabControl.Items>
+				</TabControl>
+			</DockPanel>
 		</ui:NavigationView>
 	</DockPanel>
 </Window>

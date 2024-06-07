@@ -19,6 +19,8 @@ namespace ControlPanel.Views
 
         private async void MainWindow_Loaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
+            if (Design.IsDesignMode)
+                return;
             await ShowInputDialogAsync();
         }
 

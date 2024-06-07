@@ -5,20 +5,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:ic="using:FluentIcons.Avalonia.Fluent"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 x:DataType="uc:MainWindowStatusBarViewModel"
              x:Class="ControlPanel.Views.MainWindowStatusBar">
 	<Design.DataContext>
 		<uc:MainWindowStatusBarViewModel></uc:MainWindowStatusBarViewModel>
 	</Design.DataContext>
-	<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-		<Border CornerRadius="20" Background="Red" Width="20" Height="20" Margin="20 0 20 0"></Border>
-		<TextBlock >采集设备</TextBlock>
-		<Border CornerRadius="20" Background="Green" Width="20" Height="20" Margin="60 0 20 0"></Border>
-		<TextBlock >通讯服务</TextBlock>
-		<Border CornerRadius="20" Background="Green" Width="20" Height="20" Margin="60 0 20 0"></Border>
-		<TextBlock >重建服务</TextBlock>
-		<Border CornerRadius="20" Background="Green" Width="20" Height="20" Margin="60 0 20 0"></Border>
-		<TextBlock >其他</TextBlock>
-	</StackPanel>
+	<UserControl.Styles>
+		<Style Selector="TextBlock.icon">
+			<Setter Property="VerticalAlignment" Value="Center"></Setter>
+			<Setter Property="Margin" Value="5,0,60,0"></Setter>
+		</Style>
+	</UserControl.Styles>
+	<DockPanel>
+		<StackPanel DockPanel.Dock="Right" VerticalAlignment="Center">
+			<TextBlock HorizontalAlignment="Right" Margin="0,0,5,0">V1 20240607</TextBlock>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<ic:SymbolIcon Symbol="PlugConnected"  Foreground="Green"></ic:SymbolIcon>
+			<TextBlock Classes="icon">采集设备</TextBlock>
+			<ic:SymbolIcon Symbol="PlugDisconnected" Foreground="Red"></ic:SymbolIcon>
+			<TextBlock Classes="icon">通讯服务</TextBlock>
+			<ic:SymbolIcon Symbol="PlugConnected" Foreground="Green"></ic:SymbolIcon>
+			<TextBlock Classes="icon">重建服务</TextBlock>
+			<ic:SymbolIcon Symbol="PlugConnected" Foreground="Green"></ic:SymbolIcon>
+			<TextBlock Classes="icon">其他</TextBlock>
+		</StackPanel>
+	</DockPanel>
+
 </UserControl>
