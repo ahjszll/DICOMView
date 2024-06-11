@@ -20,6 +20,6 @@ namespace Models
         public string RealName { get; set; } = "";
 
         [Column(StringLength = 200)]
-        public string PWD { get; set; } = "";
+        public string PWD { get; set; } = ""; 
     }
 }
